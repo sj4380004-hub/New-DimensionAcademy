@@ -1,0 +1,99 @@
+/* ===== GLOBAL ENHANCEMENTS ===== */
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dark);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--accent), var(--accent2));
+  border-radius: 10px;
+}
+
+/* Selection */
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Smooth hover for all clickable */
+a, button {
+  transition: all 0.25s ease;
+}
+
+/* ===== CARD GLOW EFFECT ===== */
+.course-card:hover,
+.feature-card:hover {
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.4),
+    0 0 25px rgba(79,142,247,0.15);
+}
+
+/* ===== BUTTON ANIMATION ===== */
+.btn-primary,
+.form-submit {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after,
+.form-submit::after {
+  content: '';
+  position: absolute;
+  width: 120%;
+  height: 100%;
+  top: 0;
+  left: -120%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent);
+  transition: all 0.5s;
+}
+
+.btn-primary:hover::after,
+.form-submit:hover::after {
+  left: 100%;
+}
+
+/* ===== NAVBAR IMPROVEMENT ===== */
+nav.scrolled {
+  backdrop-filter: blur(30px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ===== HERO TEXT GLOW ===== */
+h1 {
+  text-shadow: 0 0 30px rgba(79,142,247,0.2);
+}
+
+/* ===== COURSE HOVER ZOOM ===== */
+.course-banner {
+  transition: transform 0.4s ease;
+}
+
+.course-card:hover .course-banner {
+  transform: scale(1.1);
+}
+
+/* ===== INPUT FOCUS EFFECT ===== */
+input:focus,
+textarea:focus {
+  transform: scale(1.02);
+}
+
+/* ===== MOBILE IMPROVEMENT ===== */
+@media (max-width: 500px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
